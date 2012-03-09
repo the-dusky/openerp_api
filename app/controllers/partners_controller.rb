@@ -44,8 +44,8 @@ class PartnersController < ApplicationController
   # POST /partners.json
   def create
     @partner = ResPartner.create(
-      name: 'balls',
-      ref: 'h_',
+      name: params[:name],
+      ref: params[:ref],
       supplier: 'true',
       company_id: 3,
       property_account_receivable: 142,
