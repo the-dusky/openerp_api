@@ -1,4 +1,6 @@
 OoorTest::Application.routes.draw do
+  resources :partners
+
   resources :open_erps
 
   # The priority is based upon order of creation:

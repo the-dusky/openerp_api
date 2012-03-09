@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  erp_id: 1
+  hick_id: 1
+  spree_id: 1
+
+two:
+  erp_id: 1
+  hick_id: 1
+  spree_id: 1
