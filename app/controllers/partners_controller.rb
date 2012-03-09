@@ -9,14 +9,12 @@ class PartnersController < ApplicationController
   # GET /partners
   # GET /partners.json
   def index
-    @partner = ResPartner.create(
-      :name => 'TEST',
-      :ref => 'h_22',
-      :supplier => true,
-      :company_id => 2,
-      :property_account_receivable => 142,
-      :property_account_payable => 150
-    )
+    @partner = ResPartner.create(params[:partner])
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @partner }
+    end
     
     respond_to do |format|
       format.html # show.html.erb
