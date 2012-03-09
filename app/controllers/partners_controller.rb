@@ -2,8 +2,8 @@ class PartnersController < ApplicationController
   after_filter :set_access_control_headers
   
   def set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = 'http://www.hickorees.com'
-    headers['Access-Control-Request-Method'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+            headers['Access-Control-Allow-Headers'] = 'x-requested-with'
   end
   
   # GET /partners
