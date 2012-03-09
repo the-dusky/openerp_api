@@ -11,8 +11,8 @@ development:
 
 test:
     url: http://www.maxcorsillo.com:8069/xmlrpc         #the OpenERP XML/RPC server
-    database: mc_database               #the OpenERP database you want to connect to
-    username: sandycorsillo
+    database: MC2             #the OpenERP database you want to connect to
+    username: admin
     password: Ne11/2a$?
     #models: [res.partner, product.template, product.product, product.category, sale.order, sale.order.line, account.invoice] #you can allow only some models if you like
     bootstrap: true   #true if you want to load OpenObject models (will hit OpenERP server) at startup; else use Ooor.reload!(lambda {}) to reload the Ooor models at any time
@@ -22,8 +22,8 @@ test:
 
 production:
     url: http://www.maxcorsillo.com:8069/xmlrpc         #the OpenERP XML/RPC server
-    database: mc_database               #the OpenERP database you want to connect to
-    username: sandycorsillo
+    database: MC2            #the OpenERP database you want to connect to
+    username: admin
     password: Ne11/2a$?
     #models: [res.partner, product.template, product.product, product.category, sale.order, sale.order.line, account.invoice] #you can allow only some models if you like
     bootstrap: true   #true if you want to load OpenObject models (will hit OpenERP server) at startup; else use Ooor.reload!(lambda {}) to reload the Ooor models at any time
