@@ -41,13 +41,12 @@ class PartnersController < ApplicationController
   # POST /partners
   # POST /partners.json
   def create
-    @partner = ResPartner.new(params[:partner])
-    @partner.save
+    @partner = ResPartner.create(params[:partner])
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @partner }
-    end
+    # respond_to do |format|
+    #       format.html # show.html.erb
+    #       format.json { render json: @partner }
+    #     end
   end
 
   # PUT /partners/1
