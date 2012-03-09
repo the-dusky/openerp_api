@@ -3,7 +3,7 @@ class PartnersController < ApplicationController
   # GET /partners
   # GET /partners.json
   def index
-    @partner = ResPartner.create(params[:partner])
+    #@partner = ResPartner.create(params[:partner])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -43,10 +43,10 @@ class PartnersController < ApplicationController
   def create
     @partner = ResPartner.create(params[:partner])
     
-    # respond_to do |format|
-    #       format.html # show.html.erb
-    #       format.json { render json: @partner }
-    #     end
+    respond_to do |format|
+          format.html # show.html.erb
+          format.json { render json: @partner }
+          end
   end
 
   # PUT /partners/1
