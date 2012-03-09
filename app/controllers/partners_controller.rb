@@ -3,6 +3,7 @@ class PartnersController < ApplicationController
   
   def set_access_control_headers
     headers['Access-Control-Allow-Origin'] = 'http://www.hickorees.com'
+    headers['Access-Control-Request-Method'] = 'POST, GET, OPTIONS'
   end
   
   # GET /partners
