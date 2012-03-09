@@ -4,8 +4,7 @@ class PartnersController < ApplicationController
   # GET /partners.json
   def index
     @partner = ResPartner.create(
-      name: 'balls',
-      
+      name: 'balls'
     )
 
     respond_to do |format|
