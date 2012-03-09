@@ -1,21 +1,10 @@
 class PartnersController < ApplicationController
-  after_filter :set_access_control_headers
-  
-  def set_access_control_headers
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-            headers['Access-Control-Allow-Headers'] = 'x-requested-with'
-  end
   
   # GET /partners
   # GET /partners.json
   def index
     @partner = ResPartner.create(params[:partner])
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @partner }
-    end
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @partner }
@@ -52,7 +41,8 @@ class PartnersController < ApplicationController
   # POST /partners
   # POST /partners.json
   def create
-    @partner = ResPartner.create(params[:partner])
+    @partner = ResPartner.new(params[:partner])
+    @partner.save
     
     respond_to do |format|
       format.html # show.html.erb
