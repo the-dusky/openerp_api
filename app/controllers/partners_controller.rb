@@ -46,16 +46,16 @@ class PartnersController < ApplicationController
     @partner = ResPartner.create(
       name: 'balls',
       ref: 'h_',
-      supplier: true,
+      supplier: 'true',
       company_id: 3,
       property_account_receivable: 142,
-      property_account_payable: => 150
+      property_account_payable: 150
     )
     
     respond_to do |format|
-          format.html # show.html.erb
-          format.json { render json: @partner }
-          end
+      format.html # show.html.erb
+      format.json { render json: @partner }
+      end
   end
 
   # PUT /partners/1
