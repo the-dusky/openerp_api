@@ -54,7 +54,7 @@ class PartnersController < ApplicationController
   # POST /partners
   # POST /partners.json
   def create
-    @partner = Partner.new(params[:partner])
+    @partner = ResPartner.create(params[:partner])
     
     respond_to do |format|
       format.html # show.html.erb
