@@ -1,6 +1,6 @@
 development:
   url: http://www.maxcorsillo.com:8069/xmlrpc         #the OpenERP XML/RPC server
-  database: mc               #the OpenERP database you want to connect to
+  database: mc_test           #the OpenERP database you want to connect to
   username: admin
   password: Ne11/2a$?
   #models: [res.partner, product.template, product.product, product.category, sale.order, sale.order.line, account.invoice] #you can allow only some models if you like
@@ -11,7 +11,7 @@ development:
 
 test:
     url: http://www.maxcorsillo.com:8069/xmlrpc         #the OpenERP XML/RPC server
-    database: mc            #the OpenERP database you want to connect to
+    database: mc_test            #the OpenERP database you want to connect to
     username: admin
     password: Ne11/2a$?
     #models: [res.partner, product.template, product.product, product.category, sale.order, sale.order.line, account.invoice] #you can allow only some models if you like
@@ -21,8 +21,8 @@ test:
     #'lang': en_US
 
 production:
-    url: http://www.maxcorsillo.com:8069/xmlrpc         #the OpenERP XML/RPC server
-    database: mc            #the OpenERP database you want to connect to
+    url: http://10.34.5.67:8069/xmlrpc         #the OpenERP XML/RPC server
+    database: mc_test           #the OpenERP database you want to connect to
     username: admin
     password: Ne11/2a$?
     #models: [res.partner, product.template, product.product, product.category, sale.order, sale.order.line, account.invoice] #you can allow only some models if you like

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = ProductProduct.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
+    @product = ProductProduct.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
-    @product = Product.new
+    @product = ProductProduct.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = ProductProduct.find(params[:id])
   end
 
   # POST /products
