@@ -1,4 +1,6 @@
 OoorTest::Application.routes.draw do
+  resources :products
+
   resources :partners
 
   resources :open_erps
