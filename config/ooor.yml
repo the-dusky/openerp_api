@@ -21,7 +21,7 @@ test:
     #'lang': en_US
 
 production:
-    url: http://10.34.5.67:8069/xmlrpc         #the OpenERP XML/RPC server
+    url: http://www.maxcorsillo.com:8069/xmlrpc         #the OpenERP XML/RPC server
     database: mc_test           #the OpenERP database you want to connect to
     username: admin
     password: Ne11/2a$?
