@@ -2,7 +2,23 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = ProductProduct.all
+    @products = ProductProduct.create(
+      name: 'TEST',
+      cost_method: 'standard',
+      description: 'blah blah',
+      procure_method: 'made_to_order',
+      supply_method: 'buy',
+      sale_ok: true,
+      purchase_ok: true,
+      weight: 1,
+      variants: 'Size: Large',
+      seller_id: 142,
+      company_id: 3,
+      ref: 'impacct_id',
+      price: 5,
+      income_account: 32,
+      sales_account: 197,
+    )
 
     respond_to do |format|
       format.html # index.html.erb
