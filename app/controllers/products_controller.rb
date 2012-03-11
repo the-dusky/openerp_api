@@ -12,14 +12,14 @@ class ProductsController < ApplicationController
       purchase_ok: true, #Can be Sold
       weight: 1,
       variants: 'Size: MEDIUM',
-      supplierinfo_id: 81,
       company_id: 3,
       default_code: 'impacct_id', #ref
       list_price: 5, #sale_price
       standard_price: 3, #cost
       property_account_income: 197, #income_account
       property_account_expense: 205, #cogs_account
-      type: 'product' #product_type ('product' = stockable_product)
+      type: 'product', #product_type ('product' = stockable_product)
+      product_tmpl_id: 18
     )
 
     respond_to do |format|

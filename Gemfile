@@ -46,3 +46,4 @@ end
 
 gem 'ooor'
 gem 'heroku'
+gem 'rabl'
