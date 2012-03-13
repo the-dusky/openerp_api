@@ -2,12 +2,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = params[:product]
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
-    end
+    # @products = params[:proudct]
+    # 
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @products }
+    # end
   end
 
   # GET /products/1
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @products = params[:product]
+    @products = params[:name]
 
     respond_to do |format|
       format.html # index.html.erb
