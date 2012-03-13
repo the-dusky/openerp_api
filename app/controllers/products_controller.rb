@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @products = ProductProduct.create(
-      name:           'balls',
+      name:           params[:name],
       cost_method:      'standard'
     )
     # @products = ProductProduct.create(
