@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = params[:product]
+    @products = params[:product]
 
     respond_to do |format|
       format.html # index.html.erb
