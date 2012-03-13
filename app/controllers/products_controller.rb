@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = ProductProduct.all
-
+    @products = params[:product]
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = ProductProduct.create(params[:product])
+    @product = params[:product]
 
     respond_to do |format|
       format.html # index.html.erb
