@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = ProductProduct.create(
-      name: 'BALLERS'
+      name: 'BALLERssS'
     )
        
        respond_to do |format|
