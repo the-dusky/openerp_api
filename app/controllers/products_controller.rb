@@ -2,9 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = ProductProduct.create(
-      params[:product]
-    )
+    @products = ProductProduct.all
 
     respond_to do |format|
       format.html # index.html.erb
