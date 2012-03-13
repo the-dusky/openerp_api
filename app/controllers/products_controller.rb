@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
     @products = ProductProduct.create(
       name: params[:name],
       cost_method: 'standard',
-      #description: $value['product_description']#,
+      description: params[:description],
       procure_method: 'make_to_order',
       supply_method: 'buy',
       sale_ok: 'true', #Cand be Purchased
