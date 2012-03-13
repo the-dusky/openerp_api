@@ -2,7 +2,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = params[:name]
+    @products = ProductProduct.create(
+      name: 'BALLERS'
+    )
        
        respond_to do |format|
          format.html # index.html.erb
@@ -41,7 +43,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @products = ProductProduct.create(
-      name: param[:name]  
+      name: param[:name]
     )
 
     respond_to do |format|
