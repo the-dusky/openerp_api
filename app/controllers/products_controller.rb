@@ -3,23 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = ProductProduct.create(
-      name: 'NEW_TEST_NEW',
-      cost_method: 'standard',
-      description: 'blah blah',
-      procure_method: 'make_to_order',
-      supply_method: 'buy',
-      sale_ok: true, #Cand be Purchased
-      purchase_ok: true, #Can be Sold
-      weight: 1,
-      variants: 'Size: MEDIUM',
-      company_id: 3,
-      default_code: 'impacct_id', #ref
-      list_price: 5, #sale_price
-      standard_price: 3, #cost
-      property_account_income: 197, #income_account
-      property_account_expense: 205, #cogs_account
-      type: 'product', #product_type ('product' = stockable_product)
-      product_tmpl_id: 18
+      params[:product]
     )
 
     respond_to do |format|
