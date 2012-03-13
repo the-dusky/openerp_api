@@ -44,8 +44,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @products = ProductProduct.create(
-      name:             params[:name],
-      cost_method:      params[:standard]
+      name:             'ass',
+      cost_method:      'clown'
               # 'description' => $value['product_description'],
               #               'procure_method' => 'make_to_order',
               #               'supply_method' => 'buy',
