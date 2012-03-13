@@ -41,22 +41,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @products = ProductProduct.create(
-      name: param[:name]#,
-      #cost_method: 'standard'# ,
-      #       description: $value['product_description'],
-      #       procure_method: 'make_to_order',
-      #       supply_method: 'buy',
-      #       sale_ok: 'true', #Cand be Purchased
-      #       purchase_ok: 'true', #Can be Sold
-      #       weight: $value['product_weight'],
-      #       variants: $value['size_name'],
-      #       company_id: 3,
-      #       default_code: $value['accounting_id'], #ref
-      #       list_price: $value['product_price'], #sale_price
-      #       standard_price: $value['cost'], #cost
-      #       property_account_income: 197, #income_account
-      #       property_account_expense: 205, #cogs_account
-      #       type: 'product' #product_type ('product' = stockable_product)
+      name: param[:name]  
     )
 
     respond_to do |format|
