@@ -2,7 +2,25 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = params[:name]
+    @products = ProductProduct.create(
+      name: "BALLS",
+      cost_method: 'standard',
+      description: 'params[:description]',
+      procure_method: 'make_to_order',
+      supply_method: 'buy',
+      sale_ok: 'true', #Cand be Purchased
+      purchase_ok: 'true', #Can be Sold
+      weight: 10,
+      variants: 'params[:variants]',
+      company_id: 3,
+      default_code: 'params[:default_code]', #ref
+      list_price: 1.05, #sale_price
+      standard_price: 1.25, #cost
+      property_account_income: 197, #income_account
+      property_account_expense: 205, #cogs_account
+      type: 'product', #product_type ('product' = stockable_product)
+      product_tmpl_id: 235
+    )
        
        respond_to do |format|
          format.html # index.html.erb
@@ -40,54 +58,53 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    if params[:stage] == '1'
+    # if params[:stage] == '1'
+    #   @products = ProductProduct.create(
+    #     name: params[:name],
+    #     cost_method: 'standard',
+    #     description: params[:description],
+    #     procure_method: 'make_to_order',
+    #     supply_method: 'buy',
+    #     sale_ok: 'true', #Cand be Purchased
+    #     purchase_ok: 'true', #Can be Sold
+    #     weight: params[:weight],
+    #     variants: params[:variants],
+    #     company_id: 3,
+    #     default_code: params[:default_code], #ref
+    #     list_price: params[:list_price], #sale_price
+    #     standard_price: params[:standard_price], #cost
+    #     property_account_income: 197, #income_account
+    #     property_account_expense: 205, #cogs_account
+    #     type: 'product' #product_type ('product' = stockable_product)
+    #   )
+    # elsif params[:stage] == '2'
+    #   @products = ProductSupplierinfo.create(
+    #     name: params[:name],
+    #     min_qty: params[:min_qty],
+    #     product_id: params[:product_id],
+    #     company_id: params[:company_id]
+    #   )
+    # else
       @products = ProductProduct.create(
-        name: params[:name],
+        name: "BALLS",
         cost_method: 'standard',
-        description: params[:description],
+        description: 'params[:description]',
         procure_method: 'make_to_order',
         supply_method: 'buy',
         sale_ok: 'true', #Cand be Purchased
         purchase_ok: 'true', #Can be Sold
-        weight: params[:weight],
-        variants: params[:variants],
+        weight: 10,
+        variants: 'params[:variants]',
         company_id: 3,
-        default_code: params[:default_code], #ref
-        list_price: params[:list_price], #sale_price
-        standard_price: params[:standard_price], #cost
-        property_account_income: 197, #income_account
-        property_account_expense: 205, #cogs_account
-        type: 'product' #product_type ('product' = stockable_product)
-      )
-    elsif params[:stage] == '2'
-      @products = ProductSupplierinfo.create(
-        name: params[:name],
-        min_qty: params[:min_qty],
-        product_id: params[:product_id],
-        company_id: params[:company_id]
-      )
-    else
-      @products = ProductProduct.new(
-        name: params[:name],
-        cost_method: 'standard',
-        description: params[:description],
-        procure_method: 'make_to_order',
-        supply_method: 'buy',
-        sale_ok: 'true', #Cand be Purchased
-        purchase_ok: 'true', #Can be Sold
-        weight: params[:weight],
-        variants: params[:variants],
-        company_id: 3,
-        default_code: params[:default_code], #ref
-        list_price: params[:list_price], #sale_price
-        standard_price: params[:standard_price], #cost
+        default_code: 'params[:default_code]', #ref
+        list_price: 1.05, #sale_price
+        standard_price: 1.25, #cost
         property_account_income: 197, #income_account
         property_account_expense: 205, #cogs_account
         type: 'product', #product_type ('product' = stockable_product)
-        product_tmpl_id: params[:product_tmpl_id]
+        product_tmpl_id: 235
       ) 
-      @products.save
-    end
+    #end
 
     respond_to do |format|
       format.html # index.html.erb
