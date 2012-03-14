@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    if params[:one].blank?
+    if params[:product_tmpl_id].blank?
       @products = ProductProduct.create(
         name: params[:name],
         cost_method: 'standard',
