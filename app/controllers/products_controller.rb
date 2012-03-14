@@ -102,7 +102,7 @@ class ProductsController < ApplicationController
         property_account_income: 197, #income_account
         property_account_expense: 205, #cogs_account
         type: 'product', #product_type ('product' = stockable_product)
-        product_tmpl_id: params[:xyz]
+        product_tmpl_id: params[:xyz].to_i
       ) 
     end
 
