@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    if (params[:stage] == 1)
+    if params[:stage] == '1'
       @products = ProductProduct.create(
         name: params[:name],
         cost_method: 'standard',
