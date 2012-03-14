@@ -58,33 +58,33 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    # if params[:stage] == '1'
-    #   @products = ProductProduct.create(
-    #     name: params[:name],
-    #     cost_method: 'standard',
-    #     description: params[:description],
-    #     procure_method: 'make_to_order',
-    #     supply_method: 'buy',
-    #     sale_ok: 'true', #Cand be Purchased
-    #     purchase_ok: 'true', #Can be Sold
-    #     weight: params[:weight],
-    #     variants: params[:variants],
-    #     company_id: 3,
-    #     default_code: params[:default_code], #ref
-    #     list_price: params[:list_price], #sale_price
-    #     standard_price: params[:standard_price], #cost
-    #     property_account_income: 197, #income_account
-    #     property_account_expense: 205, #cogs_account
-    #     type: 'product' #product_type ('product' = stockable_product)
-    #   )
-    # elsif params[:stage] == '2'
-    #   @products = ProductSupplierinfo.create(
-    #     name: params[:name],
-    #     min_qty: params[:min_qty],
-    #     product_id: params[:product_id],
-    #     company_id: params[:company_id]
-    #   )
-    # else
+    if params[:stage] == '1'
+      @products = ProductProduct.create(
+        name: params[:name],
+        cost_method: 'standard',
+        description: params[:description],
+        procure_method: 'make_to_order',
+        supply_method: 'buy',
+        sale_ok: 'true', #Cand be Purchased
+        purchase_ok: 'true', #Can be Sold
+        weight: params[:weight],
+        variants: params[:variants],
+        company_id: 3,
+        default_code: params[:default_code], #ref
+        list_price: params[:list_price], #sale_price
+        standard_price: params[:standard_price], #cost
+        property_account_income: 197, #income_account
+        property_account_expense: 205, #cogs_account
+        type: 'product' #product_type ('product' = stockable_product)
+      )
+    elsif params[:stage] == '2'
+      @products = ProductSupplierinfo.create(
+        name: params[:name],
+        min_qty: params[:min_qty],
+        product_id: params[:product_id],
+        company_id: params[:company_id]
+      )
+    else
       @products = ProductProduct.create(
         name: "BALLS",
         cost_method: 'standard',
@@ -104,7 +104,7 @@ class ProductsController < ApplicationController
         type: 'product', #product_type ('product' = stockable_product)
         product_tmpl_id: 235
       ) 
-    #end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
