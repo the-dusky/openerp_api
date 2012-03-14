@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    if (params[:stage] == 1)
       @products = ProductProduct.create(
         name: params[:name],
         cost_method: 'standard',
@@ -58,7 +59,7 @@ class ProductsController < ApplicationController
         property_account_expense: 205, #cogs_account
         type: 'product' #product_type ('product' = stockable_product)
       )
-    if params[:supplier_info] == 1
+    elsif params[:stage] == 2
       @products = ProductSupplierinfo.create(
         name: params[:name],
         min_qty: params[:min_qty],
