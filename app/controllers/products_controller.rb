@@ -86,22 +86,22 @@ class ProductsController < ApplicationController
       )
     else
       @products = ProductProduct.create(
-        name: "BALLS",
+        name: params[:name],
         cost_method: 'standard',
-        description: 'params[:description]',
+        description: params[:description],
         procure_method: 'make_to_order',
         supply_method: 'buy',
         sale_ok: 'true', #Cand be Purchased
         purchase_ok: 'true', #Can be Sold
-        weight: 10,
-        variants: 'params[:variants]',
+        weight: params[:weight],
+        variants: params[:variants],
         company_id: 3,
-        default_code: 'params[:default_code]', #ref
-        list_price: 1.05, #sale_price
-        standard_price: 1.25, #cost
+        default_code: params[:default_code], #ref
+        list_price: params[:list_price], #sale_price
+        standard_price: params[:standard_price], #cost
         property_account_income: 197, #income_account
         property_account_expense: 205, #cogs_account
-        type: 'product', #product_type ('product' = stockable_product)
+        type: 'product' #product_type ('product' = stockable_product)
         product_tmpl_id: 235
       ) 
     end
