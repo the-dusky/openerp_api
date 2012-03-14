@@ -83,8 +83,8 @@ class ProductsController < ApplicationController
         standard_price: params[:standard_price], #cost
         property_account_income: 197, #income_account
         property_account_expense: 205, #cogs_account
-        type: 'product', #product_type ('product' = stockable_product)
-        product_tmpl_id: params[:product_tmpl_id]
+        type: 'product'# , #product_type ('product' = stockable_product)
+        #         product_tmpl_id: params[:product_tmpl_id]
       )
     end
 
