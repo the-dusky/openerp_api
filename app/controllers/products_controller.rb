@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
         company_id: params[:company_id]
       )
     else
-      @products = ProductProduct.create(
+      @products = ProductProduct.new(
         name: params[:name],
         cost_method: 'standard',
         description: params[:description],
@@ -85,7 +85,8 @@ class ProductsController < ApplicationController
         property_account_expense: 205, #cogs_account
         type: 'product', #product_type ('product' = stockable_product)
         product_tmpl_id: params[:product_tmpl_id]
-      )
+      ) 
+      @products.save
     end
 
     respond_to do |format|
