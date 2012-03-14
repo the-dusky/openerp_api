@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
         property_account_expense: 205, #cogs_account
         type: 'product' #product_type ('product' = stockable_product)
       )
-    elsif params[:stage] == 2
+    elsif params[:stage] == '2'
       @products = ProductSupplierinfo.create(
         name: params[:name],
         min_qty: params[:min_qty],
