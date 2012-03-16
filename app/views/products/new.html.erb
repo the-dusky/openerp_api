@@ -1,5 +1,13 @@
 <h1>New product</h1>
 
-<%= render 'form' %>
+<%= form_tag("/products.json", :method => "get") do %>
+	NAME: <%= text_field_tag(:name) %><br />
+	DESCRIPTION: <%= text_field_tag(:description) %><br />
+	WEIGHT: <%= text_field_tag(:weight) %><br />
+	REFERENCE NUMBER: <%= text_field_tag(:default_code) %><br />
+    PRICE: <%= text_field_tag(:list_price) %><br />
+    COST: <%= text_field_tag(:standard_price) %><br />
+	<%= submit_tag("ENTER") %>
+<% end %>
 
 <%= link_to 'Back', products_path %>

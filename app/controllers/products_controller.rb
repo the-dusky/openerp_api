@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = ProductProduct.create(
-      name: "BALLS",
+      name: params[:name],
       cost_method: 'standard',
       description: 'params[:description]',
       procure_method: 'make_to_order',
@@ -11,15 +11,14 @@ class ProductsController < ApplicationController
       sale_ok: 'true', #Cand be Purchased
       purchase_ok: 'true', #Can be Sold
       weight: 10,
-      variants: 'params[:variants]',
+      variants: 'LARGE',
       company_id: 3,
-      default_code: 'params[:default_code]', #ref
+      default_code: '1234 - 9046', #ref
       list_price: 1.05, #sale_price
       standard_price: 1.25, #cost
       property_account_income: 197, #income_account
       property_account_expense: 205, #cogs_account
-      type: 'product', #product_type ('product' = stockable_product)
-      product_tmpl_id: 235
+      type: 'product' #product_type ('product' = stockable_product) 
     )
        
        respond_to do |format|
@@ -59,24 +58,44 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     if params[:stage] == '1'
-      @products = ProductProduct.create(
-        name: params[:name],
-        cost_method: 'standard',
-        description: params[:description],
-        procure_method: 'make_to_order',
-        supply_method: 'buy',
-        sale_ok: 'true', #Cand be Purchased
-        purchase_ok: 'true', #Can be Sold
-        weight: params[:weight],
-        variants: params[:variants],
-        company_id: 3,
-        default_code: params[:default_code], #ref
-        list_price: params[:list_price], #sale_price
-        standard_price: params[:standard_price], #cost
-        property_account_income: 197, #income_account
-        property_account_expense: 205, #cogs_account
-        type: 'product' #product_type ('product' = stockable_product)
-      )
+      if params[:variants] == 'ONE SIZE' 
+         @products = ProductProduct.create(
+            name: params[:name],
+            cost_method: 'standard',
+            description: params[:description],
+            procure_method: 'make_to_order',
+            supply_method: 'buy',
+            sale_ok: 'true', #Cand be Purchased
+            purchase_ok: 'true', #Can be Sold
+            weight: params[:weight],
+            company_id: 3,
+            default_code: params[:default_code], #ref
+            list_price: params[:list_price], #sale_price
+            standard_price: params[:standard_price], #cost
+            property_account_income: 197, #income_account
+            property_account_expense: 205, #cogs_account
+            type: 'product' #product_type ('product' = stockable_product)
+          )
+      else 
+         @products = ProductProduct.create(
+            name: params[:name],
+            cost_method: 'standard',
+            description: params[:description],
+            procure_method: 'make_to_order',
+            supply_method: 'buy',
+            sale_ok: 'true', #Cand be Purchased
+            purchase_ok: 'true', #Can be Sold
+            weight: params[:weight],
+            variants: params[:variants],
+            company_id: 3,
+            default_code: params[:default_code], #ref
+            list_price: params[:list_price], #sale_price
+            standard_price: params[:standard_price], #cost
+            property_account_income: 197, #income_account
+            property_account_expense: 205, #cogs_account
+            type: 'product' #product_type ('product' = stockable_product)
+          )
+      end
     elsif params[:stage] == '2'
       @products = ProductSupplierinfo.create(
         name: params[:name],
